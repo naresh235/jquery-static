@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 652157035123.dkr.ecr.us-east-2.amazonaws.com/jquery-static: number
+        image: 652157035123.dkr.ecr.us-east-2.amazonaws.com/jquery-static:number
         ports:
         - containerPort: 80
 ---
