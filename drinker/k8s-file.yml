@@ -12,7 +12,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 1 
+  replicas: 2 
   template:
     metadata:
       labels:
@@ -54,5 +54,5 @@ spec:
      - path:
        backend:
          serviceName: jqu
-    ery-static-svc
+    jquery-static-svc
          servicePort: 80
