@@ -53,6 +53,5 @@ spec:
      paths:
      - path:
        backend:
-         serviceName: jqu
-    jquery-static-svc
+         serviceName: jquery-static-svc
          servicePort: 80
