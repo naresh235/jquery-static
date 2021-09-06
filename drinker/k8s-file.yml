@@ -12,7 +12,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 1 
   template:
     metadata:
       labels:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 652157035123.dkr.ecr.us-east-2.amazonaws.com/jquery-static:12
+        image: 652157035123.dkr.ecr.us-east-2.amazonaws.com/jquery-static:13
         ports:
         - containerPort: 80
 ---
