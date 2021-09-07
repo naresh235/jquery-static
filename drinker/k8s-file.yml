@@ -7,12 +7,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jquery-deployment
+  labels:
+    app: nginx
   namespace: jquery
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
-  replicas: 1 # tells deployment to run 1 pods matching the template
   template:
     metadata:
       labels:
@@ -20,7 +22,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 652157035123.dkr.ecr.us-east-2.amazonaws.com/jquery-static: 23
+        image: 652157035123.dkr.ecr.us-east-2.amazonaws.com/jquery-static:number
         ports:
         - containerPort: 80
 ---
