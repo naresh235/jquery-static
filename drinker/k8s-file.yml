@@ -1,19 +1,18 @@
-
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: bomdianao
+  name: jquery
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  namespace: bomdianao
+  name: jquery-deployment
+  namespace: jquery
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 1 # tells deployment to run 2 pods matching the template
+  replicas: 1 # tells deployment to run 1 pods matching the template
   template:
     metadata:
       labels:
@@ -28,8 +27,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bomdianao-svc
-  namespace: bomdianao
+  name: jquery-svc
+  namespace: jquery
 spec:
   selector:
     app: nginx
@@ -43,16 +42,16 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
- name: bomdianao-ingress
- namespace: bomdianao
+ name: jquery-ingress
+ namespace: jquery
  annotations:
    kubernetes.io/ingress.class: nginx
 spec:
  rules:
- - host: bomdianao.kirthinareshtech.xyz
+ - host: jquery.kirthinareshtech.xyz
    http:
      paths:
      - path:
        backend:
-         serviceName: bomdianao-svc
+         serviceName: jquery-svc
          servicePort: 80
